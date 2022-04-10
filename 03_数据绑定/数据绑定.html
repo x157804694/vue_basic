@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模板语法</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<!--    <-->
+<div id="root">
+    <!-- 普通写法 -->
+    <!-- 单向数据绑定：<input type="text" v-bind:value="name"><br>-->
+    <!-- 双向数据绑定：<input type="text" v-model:value="name"><br>-->
+    <!-- 备注：
+        a.双向绑定一般都应用在表单元素上，如<input> <select> <textarea>等
+        b.v-model:value 可以简写为v-model,因为v-model默认收集的就是value值
+    -->
+    <!-- 简写 -->
+    单向数据绑定：<input type="text" :value="name"><br>
+    双向数据绑定：<input type="text" v-model="name"><br>
+    <!-- 如下代码是错误的，因为 v-model 只能应用在表单类元素（输入类元素）上 -->
+    <!-- <h1 v-model:x="name"></h1> -->
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+    new Vue({
+        el:"#root",
+        data:{
+            name:'xdl'
+        }
+    })
+</script>
+</body>
+</html>
